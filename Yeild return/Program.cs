@@ -15,6 +15,7 @@ namespace Yeild_return
         }
        static void printIndexOfNumber(List<int> listDataInput, int number)
         {
+            // function listCollection(listDataInput,number)
             foreach (var item in listCollection(listDataInput, number))
             {
                 Console.WriteLine(item);
@@ -23,13 +24,19 @@ namespace Yeild_return
             Console.ReadKey();
         
         }
-
+        /// <summary>
+        ///  IEnumberable will collect data no need declare more List<string> for add item.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="number"></param>
+        /// <returns></returns>
         private static IEnumerable<int> listCollection(List<int> list,int number)
         {
             for (int i=0;i<list.Count();i++)
             {
                 if (list[i].Equals(number))
                 {
+                    // item yield so very performance when switch main function and listcollection function
                     yield return i;
                 }
             }
